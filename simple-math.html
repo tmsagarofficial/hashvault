@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Math Challenge | HashVault</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .terminal-text {
+            font-family: 'VT323', monospace;
+            color: #48bb78;
+        }
+        .challenge-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .challenge-card {
+            background-color: rgba(31, 41, 55, 0.8);
+            border-radius: 16px;
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        .glitch-text {
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="container mx-auto px-4 py-10">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-white glitch-text">
+                Simple <span class="text-green-400">Math</span>
+            </h1>
+            <p class="mt-4 text-gray-300">Precise Number Combination</p>
+        </div>
+
+        <div class="challenge-container">
+            <div class="challenge-card">
+                <h2 class="text-2xl font-bold text-green-400 mb-6">Challenge Description</h2>
+                <p class="text-gray-200 mb-6">
+                    Combine two numbers to achieve a precise sum. The first and second numbers must be less than 15. Their total should exactly equal Todays Date.
+                </p>
+
+                <div class="challenge-inputs space-y-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">First Number (<=20)</label>
+                        <input type="number" id="first-input" min="0" max="14" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded" placeholder="Enter first number">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Second Number (<10)</label>
+                        <input type="text" id="second-input" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded" placeholder="Enter second number">
+                    </div>
+                </div>
+
+                <button id="submit-btn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                    Check Sum
+                </button>
+
+                <div id="result" class="mt-6 text-center"></div>
+                <div class="challenge-input mb-6 mt-10">
+                    <label class="block text-sm font-medium text-gray-300 mb-2"></l>
+                    <label type="text" id="flag-input" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded" >Note: Flag Format: HVFLAG{Th1s_is_4_Fl4g}</l>
+                </div>
+                <div id="flag-container" class="hidden mt-6">
+                    <div class="terminal-text bg-green-900 p-4 rounded-lg">
+                        <code id="flag-text">FLAG{S4FE_M4TH_C0MPL3TED}</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to check if the sum of the two numbers is correct
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            const firstInput = document.getElementById('first-input').value;
+            const secondInput = document.getElementById('second-input').value;
+            const resultElement = document.getElementById('result');
+            const flagContainer = document.getElementById('flag-container');
+            const firstNumber = parseInt(firstInput, 10);
+            let secondNumber;
+
+            // Validate the first input
+            if (isNaN(firstNumber) || firstNumber > 20) { // Allow only numbers less than 15
+                resultElement.textContent = "Please enter a valid first number (less than 21).";
+                resultElement.classList.add('text-red-500');
+                resultElement.classList.remove('text-green-400');
+                flagContainer.classList.add('hidden');
+                return;
+            }
+
+            // Try to evaluate the second input (allowing for expressions and negative numbers)
+            try {
+                secondNumber = eval(secondInput); // Use eval to evaluate expressions like -(-10)
+                if (isNaN(secondNumber) || secondInput <= 10) { // Second number must also be less than 15
+                    throw new Error("Invalid second number");
+                }
+            } catch (error) {
+                resultElement.textContent = "Please enter a valid second number (less than 10).";
+                resultElement.classList.add('text-red-500');
+                resultElement.classList.remove('text-green-400');
+                flagContainer.classList.add('hidden');
+                return;
+            }
+
+            // Check if the inputs meet the challenge conditions
+            if (firstNumber + secondNumber === 30) {
+                resultElement.textContent = "Correct! The sum is exactly 30.";
+                resultElement.classList.add('text-green-400');
+                resultElement.classList.remove('text-red-500');
+                flagContainer.classList.remove('hidden'); // Show the flag
+            } else {
+                resultElement.textContent = "Incorrect! The sum must be 30.";
+                resultElement.classList.add('text-red-500');
+                resultElement.classList.remove('text-green-400');
+                flagContainer.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

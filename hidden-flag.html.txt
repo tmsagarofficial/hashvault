@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Flag Challenge | HashVault</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap');
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .terminal-text {
+            font-family: 'VT323', monospace;
+            color: #48bb78;
+        }
+        .challenge-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .challenge-card {
+            background-color: rgba(31, 41, 55, 0.8);
+            border-radius: 16px;
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        .glitch-text {
+            animation: glitch 1s infinite;
+        }
+        #code-display {
+            white-space: pre-wrap;
+            font-family: monospace;
+            background-color: #1a202c;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="container mx-auto px-4 py-10">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-white glitch-text">
+                Code <span class="text-purple-400">Inspection</span> Challenge
+            </h1>
+            <p class="mt-4 text-gray-300">Reveal the Hidden Secret</p>
+        </div>
+
+        <div class="challenge-container">
+            <div class="challenge-card">
+                <h2 class="text-2xl font-bold text-purple-400 mb-6">Challenge Description</h2>
+                <p class="text-gray-200 mb-6">
+                    Use the magnifying glass to inspect the page's hidden code. The flag is waiting to be discovered!<a href="hidden-flag.html.txt"><button id="inspect-btn" class="">
+                        🔍
+                    </button></a>
+                </p>
+                
+                
+
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const submitBtn = document.getElementById('submit-btn');
+        const flagInput = document.getElementById('flag-input');
+        const resultDiv = document.getElementById('result');
+        const inspectBtn = document.getElementById('inspect-btn');
+        const codeDisplay = document.getElementById('code-display');
+
+        // The hidden flag is here in the comment!
+        /* FLAG{C0D3_1NSP3CT0R_CH4LL3NG3} */
+
+        const correctFlag = 'FLAG{C0D3_1NSP3CT0R_CH4LL3NG3}';
+
+        
+
+        submitBtn.addEventListener('click', () => {
+            const userInput = flagInput.value.trim();
+
+            if (userInput === correctFlag) {
+                resultDiv.innerHTML = `
+                    <p class="text-green-400 font-bold">
+                        <i class="fas fa-check-circle mr-2"></i>Correct! Flag successfully extracted.
+                    </p>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <p class="text-red-400 font-bold">
+                        <i class="fas fa-times-circle mr-2"></i>Incorrect flag. Keep searching.
+                    </p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
