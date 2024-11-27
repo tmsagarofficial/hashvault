@@ -112,7 +112,7 @@
             // Try to evaluate the second input (allowing for expressions and negative numbers)
             try {
                 secondNumber = eval(secondInput); // Use eval to evaluate expressions like -(-10)
-                if (isNaN(secondNumber) || secondInput >= 10 && secondNumber > 10) { // Second number must also be less than 15
+                if (isNaN(secondNumber) || secondInput >= 10 || secondNumber > 10) { // Second number must also be less than 15
                     throw new Error("Invalid second number");
                 }
             } catch (error) {
