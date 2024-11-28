@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Flag Challenge | HashVault</title>
+    <link rel="favicon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #1e293b;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-text {
+            font-family: 'VT323', monospace;
+            color: #38bdf8;
+        }
+
+        .challenge-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .challenge-card {
+            background-color: rgba(30, 41, 59, 0.9);
+            border-radius: 16px;
+            border: 1px solid rgba(34, 197, 94, 0.5);
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .glitch-text {
+            animation: glitch 1s infinite;
+        }
+
+        .hidden-button {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .show-button:hover {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        @keyframes glitch {
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div class="container mx-auto px-4 py-10">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-white glitch-text">
+                Audio <span class="text-emerald-400">Flag</span> Challenge
+            </h1>
+            <p class="mt-4 text-gray-300">Listen carefully to find the secret flag!</p>
+        </div>
+
+        <div class="challenge-container">
+            <div class="challenge-card">
+                <h2 class="text-2xl font-bold text-lime-400 mb-6">Challenge Description</h2>
+                <p class="text-gray-200 mb-6">
+                    Play the audio below to discover the hidden flag. Keep your ears sharp!
+                </p>
+                <audio id="audio-player" autoplay controls class="w-full">
+                    <source src="hidden-flag.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="flex items-center justify-between mt-6">
+                    <button id="decrease-volume" class="hidden-button bg-gray-800 text-white py-2 px-4 rounded-md">- Volume</button>
+                    <button id="increase-volume" class="hidden-button bg-gray-800 text-white py-2 px-4 rounded-md">+ Volume</button>
+                </div>
+                <div class="mt-4 text-sm text-gray-300 text-center">
+                    Hint: Hover over the card to unlock controls.
+                </div>
+                <div class="challenge-input mb-6 mt-10">
+                    <label class="block text-sm font-medium text-gray-300 mb-2"></l>
+                    <label type="text" id="flag-input"
+                        class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded">Note: Flag Format:
+                        <br class="md:hidden"> <br class="md:hidden"> HVFLAG{Th1s_is_4_Fl4g}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const increaseVolumeBtn = document.getElementById('increase-volume');
+        const decreaseVolumeBtn = document.getElementById('decrease-volume');
+        const card = document.querySelector('.challenge-card');
+
+        // Set initial volume to 0 (muted)
+        audio.volume = 0;
+
+        // Unlock buttons when hovering over the card
+        card.addEventListener('mouseover', () => {
+            increaseVolumeBtn.classList.remove('hidden-button');
+            decreaseVolumeBtn.classList.remove('hidden-button');
+            increaseVolumeBtn.classList.add('show-button');
+            decreaseVolumeBtn.classList.add('show-button');
+        });
+
+        // Volume controls
+        increaseVolumeBtn.addEventListener('click', () => {
+            if (audio.volume < 1) audio.volume = Math.min(1, audio.volume + 0.1);
+        });
+
+        decreaseVolumeBtn.addEventListener('click', () => {
+            if (audio.volume > 0) audio.volume = Math.max(0, audio.volume - 0.1);
+        });
+    </script>
+</body>
+
+</html>
