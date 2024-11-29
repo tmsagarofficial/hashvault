@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sage Bot Challenge | HashVault</title>
+    <link rel="favicon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #111111;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-text {
+            font-family: 'VT323', monospace;
+            color: #bcde23;
+        }
+
+        .challenge-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .challenge-card {
+            background-color: rgba(31, 41, 55, 0.8);
+            border-radius: 16px;
+            border: 1px solid #6366f1;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .glitch-text {
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div class="container mx-auto px-4 py-10">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-white glitch-text">
+                Sage <span class="text-indigo-400">Bot</span> Challenge
+            </h1>
+            <p class="mt-4 text-gray-300">Decode the Discord Challenge</p>
+        </div>
+
+        <div class="challenge-container">
+            <div class="challenge-card">
+                <h2 class="text-2xl font-bold text-indigo-400 mb-6">Challenge Description</h2>
+                <p class="mt-4 text-gray-300">Join our Discord server and interact with the Sage Bot. Use the <span class="text-green-400">/flag</span> command to retrieve the hidden flag. Your wit and communication skills will be tested!</p>
+                
+                <div class="mt-6">
+                    <a href="https://discord.gg/3YXya6dgxq" target="_blank">
+                        <button class="text-white bg-indigo-700 hover:bg-indigo-600 px-6 py-3 rounded-md transition duration-300 flex items-center justify-center">
+                            <i class="fab fa-discord mr-2"></i> Join Discord Server
+                        </button>
+                    </a>
+                </div>
+
+                <div class="challenge-input mb-6 mt-10">
+                    <div style="background-color: #1a202c; border: 1px solid #4a5568; color: #e0e0e0; padding: 16px; border-radius: 8px; margin-top: 10px;">
+                        <span style="font-weight: bold; color: #6366f1; display: block; margin-bottom: 8px;">Challenge Instructions:</span>
+                        <ol class="list-decimal list-inside text-gray-300">
+                            <li>Join the HashVault Discord server</li>
+                            <li>Find the Sage Bot in the server</li>
+                            <li>Use the <span class="text-green-400">/flag</span> command</li>
+                            <li>Enjoy the flag 🚩</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="background-color: #1a202c; border: 1px solid #4a5568; color: #e0e0e0; padding: 16px; border-radius: 8px; margin-top: 16px;">
+                        <span style="font-weight: bold; color: #6366f1; display: block; margin-bottom: 8px;">Flag Format:</span>
+                        <span>HVFLAG{Th1s_is_4_Fl4g}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
