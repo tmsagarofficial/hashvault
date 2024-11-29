@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Math Challenge | HashVault</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="favicon" href="favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap');
@@ -78,8 +79,10 @@
 
                 <div id="result" class="mt-6 text-center"></div>
                 <div class="challenge-input mb-6 mt-10">
-                    <label class="block text-sm font-medium text-gray-300 mb-2"></l>
-                    <label type="text" id="flag-input" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded" >Note: Flag Format: HVFLAG{Th1s_is_4_Fl4g}</l>
+                    <div style="background-color: #1a202c; border: 1px solid #4a5568; color: #e0e0e0; padding: 16px; border-radius: 8px; margin-top: 10px;">
+                        <span style="font-weight: bold; color: #48bb78; display: block; margin-bottom: 8px;">Flag Format:</span>
+                        <span>HVFLAG{Th1s_is_4_Fl4g}</span>
+                    </div>
                 </div>
                 <div id="flag-container" class="hidden mt-6">
                     <div class="terminal-text bg-green-900 p-4 rounded-lg">
