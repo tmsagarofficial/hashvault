@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTF Challenge | HashVault</title>
+    <title>Angle of Discovery Challenge | HashVault</title>
     <link rel="favicon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -76,27 +76,32 @@
 <body class="bg-black">
     <div class="container mx-auto px-4 py-10">
         <div class="text-center mb-10">
+           
             <h1 class="text-3xl sm:text-4xl font-bold text-white glitch-text">
-                CTF <span class="text-green-400">Challenge</span> - HashVault
+                Angle of<span class="text-orange-400"> Discovery</span>
             </h1>
             <p class="mt-4 text-gray-300">Find the Hidden Flag</p>
         </div>
 
         <div class="challenge-container">
             <div class="challenge-card">
-                <h2 class="text-2xl font-bold text-blue-400 mb-6">Mission Brief</h2>
+                <h2 class="text-2xl font-bold text-orange-400 mb-6">Challenge Description</h2>
                 <p class="text-gray-200 mb-6">
-                 Use your skills to inspect and find
-                    the secret.
+                 Use your skills to inspect and find the secret. 🙃
+
                 </p>
-                <p class="btn text-white bg-transpernt px-4 py-2 rounded-md">HVFLAG{CH4NG3D_PERSPECT1V3}</p>
+               
                 <div class="challenge-input mb-6 mt-10">
                     <div style="background-color: #1a202c; border: 1px solid #4a5568; color: #e0e0e0; padding: 16px; border-radius: 8px; margin-top: 10px;">
                         <span style="font-weight: bold; color: #48bb78; display: block; margin-bottom: 8px;">Flag Format:</span>
                         <span>HVFLAG{Th1s_is_4_Fl4g}</span>
                     </div>
                 </div>
-
+                <div id="flag-container " class="hidden mt-6 btn">
+                    <div class="terminal-text bg-green-900 p-4 rounded-lg">
+                        <code id="flag-text">HVFLAG{CH4NG3D_PERSPECT1V3}</code>
+                    </div>
+                </div>
             </div>
         </div>
 
