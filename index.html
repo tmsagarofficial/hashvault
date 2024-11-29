@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap');
-        
-        body, html {
+
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
             font-family: 'Orbitron', sans-serif;
         }
+
         #preloader {
             position: fixed;
             top: 0;
@@ -29,6 +32,7 @@
             align-items: center;
             overflow: hidden;
         }
+
         #matrix-text {
             font-family: 'VT323', monospace;
             color: #00ff41;
@@ -37,6 +41,7 @@
             text-align: center;
             line-height: 1.5;
         }
+
         .matrix-fall {
             position: absolute;
             color: #00ff41;
@@ -44,11 +49,13 @@
             opacity: 0.7;
             animation: fall linear infinite;
         }
+
         @keyframes fall {
             to {
                 transform: translateY(100vh);
             }
         }
+
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 0;
@@ -58,6 +65,7 @@
             background-attachment: fixed;
             color: #e0e0e0;
         }
+
         .overlay {
             position: fixed;
             top: 0;
@@ -67,13 +75,15 @@
             background: rgba(0, 0, 0, 0.7);
             z-index: -1;
         }
+
         .main-header {
             background: rgba(17, 24, 39, 0.8);
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-bottom: 2px solid #4338ca;
         }
+
         .bento-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -82,21 +92,24 @@
             max-width: 1400px;
             margin: 0 auto;
         }
+
         @media (min-width: 640px) {
             .bento-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
         @media (min-width: 1024px) {
             .bento-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
+
         .bento-card {
             background-color: rgba(31, 41, 55, 0.8);
             border-radius: 16px;
             border: 1px solid rgba(79, 70, 229, 0.3);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -106,10 +119,12 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
         }
+
         .bento-card:hover {
             transform: scale(1.03);
             border-color: rgba(79, 70, 229, 0.7);
         }
+
         .gradient-overlay {
             position: absolute;
             bottom: 0;
@@ -118,6 +133,7 @@
             height: 4px;
             background: linear-gradient(90deg, #4338ca, #7c3aed);
         }
+
         .challenge-icon {
             font-size: 3rem;
             opacity: 0.2;
@@ -126,20 +142,35 @@
             right: -10px;
             color: #4338ca;
         }
+
         .terminal-text {
             font-family: 'VT323', monospace;
             color: #48bb78;
         }
+
         .glitch-text {
             animation: glitch 1s infinite;
         }
+
         @keyframes glitch {
-            2%, 64% { transform: translate(2px, 0) skew(0deg); }
-            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
-            62% { transform: translate(0, 0) skew(5deg); }
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Matrix Preloader -->
     <div id="preloader">
@@ -147,17 +178,34 @@
     </div>
 
     <div id="background-overlay" class="overlay"></div>
-    
+
     <div class="main-header">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white glitch-text">
             HashVault Challenge <span class="terminal-text">Hub</span>
         </h1>
         <p class="mt-4 text-sm sm:text-base text-gray-300">
-            Breach the Firewall. Crack the Code. Solve the Challenge.
+            Crack the Code. Solve the Challenge. Get the flags 🚩
         </p>
     </div>
 
     <div class="bento-grid">
+
+        <!-- Network Challenge -->
+        <a href="challenge-6.html" target="_blank" class="bento-card">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h2 class="text-xl font-bold text-cyan-400">Network Challenge</h2>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-2">Packet Analysis & Forensics</p>
+                </div>
+                <i class="fas fa-network-wired challenge-icon"></i>
+            </div>
+            <div class="mt-4 text-xs sm:text-sm text-cyan-300 font-semibold">
+                Try Now →
+            </div>
+            <div class="gradient-overlay" style="background: linear-gradient(90deg, #06b6d4, #22d3ee)"></div>
+        </a>
+
+
         <!-- Time Machine Challenge Card -->
         <a href="time-machine.html" target="_blank" class="bento-card">
             <div class="flex justify-between items-start">
@@ -233,24 +281,69 @@
             <div class="gradient-overlay" style="background: linear-gradient(90deg, #eab308, #fbbf24)"></div>
         </a>
 
-        <!-- Network Challenge -->
-        <a href="challenge-6.html" target="_blank" class="bento-card">
+        
+
+        <!-- Forensics Challenge Card -->
+        <a href="forensics-challenge.html" target="_blank" class="bento-card">
             <div class="flex justify-between items-start">
                 <div>
-                    <h2 class="text-xl font-bold text-cyan-400">Network Challenge</h2>
-                    <p class="text-xs sm:text-sm text-gray-300 mt-2">Packet Analysis & Forensics</p>
+                    <h2 class="text-xl font-bold text-red-400">Digital Forensics</h2>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-2">Trace Hidden Evidence</p>
                 </div>
-                <i class="fas fa-network-wired challenge-icon"></i>
+                <i class="fas fa-search-plus challenge-icon"></i>
             </div>
-            <div class="mt-4 text-xs sm:text-sm text-cyan-300 font-semibold">
+            <div class="mt-4 text-xs sm:text-sm text-red-300 font-semibold">
                 Try Now →
             </div>
-            <div class="gradient-overlay" style="background: linear-gradient(90deg, #06b6d4, #22d3ee)"></div>
+            <div class="gradient-overlay" style="background: linear-gradient(90deg, #dc2626, #f87171)"></div>
         </a>
 
-        
+        <!-- Alien Comms Challenge Challenge Card -->
+        <a href="aliens.html" target="_blank" class="bento-card">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h2 class="text-xl font-bold text-blue-400">Alien Comms Challenge </h2>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-2">Decode Alien Comm</p>
+                </div>
+                <i class="fas fa-code-branch challenge-icon"></i>
+            </div>
+            <div class="mt-4 text-xs sm:text-sm text-blue-300 font-semibold">
+                Try Now →
+            </div>
+            <div class="gradient-overlay" style="background: linear-gradient(90deg, #2563eb, #60a5fa)"></div>
+        </a>
 
-        
+        <!-- Cyber Defense Challenge Card -->
+        <a href="cyber-defense.html" target="_blank" class="bento-card">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h2 class="text-xl font-bold text-teal-400">Cyber Defense</h2>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-2">Shield & Protect Systems</p>
+                </div>
+                <i class="fas fa-shield-alt challenge-icon"></i>
+            </div>
+            <div class="mt-4 text-xs sm:text-sm text-teal-300 font-semibold">
+                Try Now →
+            </div>
+            <div class="gradient-overlay" style="background: linear-gradient(90deg, #0d9488, #14b8a6)"></div>
+        </a>
+
+        <!-- Social Engineering Challenge Card -->
+        <a href="social-engineering.html" target="_blank" class="bento-card">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h2 class="text-xl font-bold text-orange-400">Social Engineering</h2>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-2">Human Vulnerability Test</p>
+                </div>
+                <i class="fas fa-user-secret challenge-icon"></i>
+            </div>
+            <div class="mt-4 text-xs sm:text-sm text-orange-300 font-semibold">
+                Try Now →
+            </div>
+            <div class="gradient-overlay" style="background: linear-gradient(90deg, #f97316, #fb923c)"></div>
+        </a>
+
+
     </div>
 
     <script>
@@ -317,9 +410,10 @@
 
         // Select a random background
         const randomBackground = backgroundUrls[Math.floor(Math.random() * backgroundUrls.length)];
-        
+
         // Set background image
         document.body.style.backgroundImage = `url('${randomBackground}')`;
     </script>
 </body>
+
 </html>
