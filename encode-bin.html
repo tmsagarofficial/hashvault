@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSINT Challenge | HashVault</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CTF Challenge | HashVault</title>
     <link rel="favicon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=VT323&display=swap');
-        
+
         body {
             font-family: 'Orbitron', sans-serif;
-            background-color: #0a0a0a;
+            background-color: #121212;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
@@ -20,15 +21,18 @@
             display: flex;
             flex-direction: column;
         }
+
         .terminal-text {
             font-family: 'VT323', monospace;
-            color: #48bb78;
+            color: #1de9b6;
         }
+
         .challenge-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
+
         .challenge-card {
             background-color: rgba(31, 41, 55, 0.8);
             border-radius: 16px;
@@ -36,51 +40,68 @@
             padding: 30px;
             backdrop-filter: blur(10px);
         }
+
         .glitch-text {
             animation: glitch 1s infinite;
         }
+
+        #code-display {
+            white-space: pre-wrap;
+            font-family: monospace;
+            background-color: #1a202c;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
         @keyframes glitch {
-            2%, 64% { transform: translate(2px, 0) skew(0deg); }
-            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
-            62% { transform: translate(0, 0) skew(5deg); }
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
         }
     </style>
 </head>
+
 <body class="bg-black">
     <div class="container mx-auto px-4 py-10">
         <div class="text-center mb-10">
             <h1 class="text-3xl sm:text-4xl font-bold text-white glitch-text">
-                OSINT <span class="text-green-400">Discovery</span> Challenge
+                CTF <span class="text-red-400">Challenge</span> - HashVault
             </h1>
-            <p class="mt-4 text-gray-300">Search for the Hidden Flag!</p>
+            <p class="mt-4 text-gray-300">Find the Hidden Flag</p>
         </div>
 
         <div class="challenge-container">
             <div class="challenge-card">
-                <h2 class="text-2xl font-bold text-green-400 mb-6">Challenge Description</h2>
-                
-            <p class="mt-4 text-gray-300">                What's the Secret of This Person?
-</p>
-            
-            <a href="https://www.reddit.com/user/SecretOrWhat3301/" target="_blank">
-                <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300 mt-6">
-                    Check  social media 🔍
-                </button>
-            </a>
-                
-
+                <h2 class="text-2xl font-bold text-amber-400 mb-6">Mission Brief</h2>
+                <p class="text-gray-200 mb-6">
+                 Use your language strength to find the FLAG
+                </p>
+                <p class="btn text-white bg-transpernt px-4 py-2 rounded-md">01001000 01010110 01000110 01001100 01000001 01000111 01111011 01000010 00110001 01001110 01011111 01000011 00110100 00110111 01000011 01001000 01111101</p>
                 <div class="challenge-input mb-6 mt-10">
-                    <label class="block text-sm font-medium text-gray-300 mb-2"></l>
-                    <label type="text" id="flag-input" class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded" >Note: Flag Format:
-                        <br class="md:hidden"> <br class="md:hidden" >
-                        HVFLAG{Th1s_is_4_Fl4g}</l>
+
+                    <label type="text" id="flag-input"
+                        class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded">Note: Flag Format:
+                        <br class="md:hidden"> <br class="md:hidden">HVFLAG{Th1s_is_4_Fl4g}</label>
                 </div>
 
-                
             </div>
         </div>
+
     </div>
 
-    
+   
 </body>
+
 </html>
