@@ -71,11 +71,13 @@
                         🔍
                     </button></a>
                 </p>
+
                 <div class="challenge-input mb-6 mt-10">
                     <div style="background-color: #1a202c; border: 1px solid #4a5568; color: #e0e0e0; padding: 16px; border-radius: 8px; margin-top: 10px;">
                         <span style="font-weight: bold; color: #48bb78; display: block; margin-bottom: 8px;">Flag Format:</span>
                         <span>HVFLAG{Th1s_is_4_Fl4g}</span>
                     </div>
+
                 </div>
                 
 
