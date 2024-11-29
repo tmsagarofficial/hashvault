@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Flag Challenge | HashVault</title>
+    <title>CTF Challenge | HashVault</title>
     <link rel="favicon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Orbitron', sans-serif;
-            background-color: #111111;
+            background-color: #121212;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
@@ -24,7 +24,7 @@
 
         .terminal-text {
             font-family: 'VT323', monospace;
-            color: #bcde23;
+            color: #1de9b6;
         }
 
         .challenge-container {
@@ -36,7 +36,7 @@
         .challenge-card {
             background-color: rgba(31, 41, 55, 0.8);
             border-radius: 16px;
-            border: 1px solid rgba(4, 227, 34, 0.347);
+            border: 1px solid rgba(79, 70, 229, 0.3);
             padding: 30px;
             backdrop-filter: blur(10px);
         }
@@ -77,30 +77,31 @@
     <div class="container mx-auto px-4 py-10">
         <div class="text-center mb-10">
             <h1 class="text-3xl sm:text-4xl font-bold text-white glitch-text">
-                Hidden <span class="text-orange-400">Flag</span> Challenge
+                CTF <span class="text-red-400">Challenge</span> - HashVault
             </h1>
-            <p class="mt-4 text-gray-300">Reveal the Hidden Secret</p>
+            <p class="mt-4 text-gray-300">Find the Hidden Flag</p>
         </div>
 
         <div class="challenge-container">
             <div class="challenge-card">
-                <h2 class="text-2xl font-bold text-green-400 mb-6">Challenge Description</h2>
-                <p class="mt-4 text-gray-300">Find the secret flag hidden in the PDF</p>
-                <br>
-                <a href="https://github.com/tmsagarofficial/hashvault/raw/main/Aliens-chat.pdf " download>
-                    <button class="text-white bg-blue-700 px-4 py-2 rounded-md">Download PDF</button>
-                </a>
+                <h2 class="text-2xl font-bold text-amber-400 mb-6">Mission Brief</h2>
+                <p class="text-gray-200 mb-6">
+                 Use your language strength to find the FLAG
+                </p>
+                <p class="btn text-white bg-transpernt px-4 py-2 rounded-md">01001000 01010110 01000110 01001100 01000001 01000111 01111011 01000010 00110001 01001110 01011111 01000011 00110100 00110111 01000011 01001000 01111101</p>
                 <div class="challenge-input mb-6 mt-10">
-                    <label class="block text-sm font-medium text-gray-300 mb-2"></l>
-                        <label type="text" id="flag-input"
-                            class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded">Note: Flag Format:
-                            <br class="md:hidden"> <br class="md:hidden"> HVFLAG{Th1s_is_4_Fl4g}</label>
+
+                    <label type="text" id="flag-input"
+                        class="w-full bg-gray-700 border border-gray-600 text-white p-2 rounded">Note: Flag Format:
+                        <br class="md:hidden"> <br class="md:hidden">HVFLAG{Th1s_is_4_Fl4g}</label>
                 </div>
+
             </div>
         </div>
 
     </div>
 
+   
 </body>
 
 </html>

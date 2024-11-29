@@ -103,20 +103,25 @@
     </div>
 
     <script>
-
-        btn = document.getElementsByClassName("btn")[0]
-        window.addEventListener("resize", () => {
-            const currentZoomLevel = window.devicePixelRatio;
-            console.log(currentZoomLevel);
-            if (currentZoomLevel > 3) {
-                btn.classList.add('block')
-                btn.classList.remove('hidden')
+        const btn = document.getElementsByClassName("btn")[0];
+    
+        const updateVisibilityOnRotation = () => {
+            // Check for portrait or landscape mode
+            const isLandscape = window.innerWidth > window.innerHeight;
+            if (isLandscape) {
+                btn.classList.add('block');
+                btn.classList.remove('hidden');
+            } else {
+                btn.classList.add('hidden');
+                btn.classList.remove('block');
             }
-            else { btn.classList.add('hidden')
-            btn.classList.remove('block')
-             }
-
-        });
+        };
+    
+        // Run on page load
+        updateVisibilityOnRotation();
+    
+        // Add event listener for resize (to detect rotation)
+        window.addEventListener("resize", updateVisibilityOnRotation);
     </script>
 </body>
 
